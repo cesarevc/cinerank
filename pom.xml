@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.cinerank.movieservice</groupId>
 	<artifactId>cinerank</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<name>cinerank</name>
 	<description>This project is build for UNAM Diplomado</description>
 	<url/>
