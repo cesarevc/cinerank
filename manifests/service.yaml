@@ -1,0 +1,12 @@
+apiVersion: 1.1.0-snapshot
+kind: Service
+metadata:
+  name: cinerank-app
+spec:
+  selector:
+    app: cinerank-app
+  ports:
+    - protocol: TCP
+      port: 80     # Puerto de acceso al servicio
+      targetPort: 8080  # Puerto donde escucha tu aplicación en el contenedor
+  type: ClusterIP
