@@ -20,7 +20,7 @@ import com.cinerank.movieservice.dto.RegistroPeliculaRequest;
 
 @RequestMapping(path="api/peliculas", produces="application/json")
 @CrossOrigin(origins="*")
-@Tag(name="pelicula", description="API del Recurso Pelicula")
+@Tag(name="pelicula", description="API del recurso pelicula")
 public interface PeliculaApi {
 	
 	@Operation(summary = "Registrar Pelicula")

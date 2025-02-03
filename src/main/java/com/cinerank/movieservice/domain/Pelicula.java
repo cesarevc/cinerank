@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@Document(collection="usuarios")
+@Document(collection="peliculas")
 public class Pelicula {
 	
 	@Id

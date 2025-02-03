@@ -12,7 +12,7 @@
 	<artifactId>cinerank</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cinerank</name>
-	<description>Project for UNAM Diplomado</description>
+	<description>This project is build for UNAM Diplomado</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -42,7 +42,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -60,7 +59,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 	</dependencies>
 	<build>
