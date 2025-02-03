@@ -1,0 +1,22 @@
+apiVersion: apps/1.1.0-snapshot
+kind: Deployment
+metadata:
+  name: cinerank-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cinerank-app
+  template:
+    metadata:
+      labels:
+        app: cinerank-app
+    spec:
+      containers:
+        - name: cinerank-app
+          image: cesarevc/cinerank-app:1.1.0-snapshot
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATA_MONGODB_URI
+              value: "mongodb://admin:admin123@mongodb:27017/cinerank"
