@@ -1,4 +1,4 @@
-apiVersion: apps/1.1.0-snapshot
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cinerank-app
@@ -17,6 +17,13 @@ spec:
           image: cesarevc/cinerank-app:1.1.0-snapshot
           ports:
             - containerPort: 8080
+          resources:
+            limits:
+              cpu: '1'
+              memory: 256Mi
+            requests:
+              cpu: '1'
+              memory: 128Mi
           env:
             - name: SPRING_DATA_MONGODB_URI
               value: "mongodb://admin:admin123@mongodb:27017/cinerank"
