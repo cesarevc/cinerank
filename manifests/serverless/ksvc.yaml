@@ -1,0 +1,18 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: cinerank-app-serverless-knative
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "1"  # Escalado automático hasta 0
+        autoscaling.knative.dev/maxScale: "5"  # Máximo de 5 pods
+    spec:
+      containers:
+        - image: cesarevc/cinerank-app:1.1.1-snapshott  # Imagen de tu app Spring Boot
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATA_MONGODB_URI
+              value: "mongodb://admin:admin123@mongodb:27017/cinerank"
