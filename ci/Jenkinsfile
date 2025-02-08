@@ -17,6 +17,23 @@ pipeline {
                 echo "** end notificaciones compilation"                            '''
             }
         }
+        environment {
+            DOCKERHUB_CREDENTIALS = credentials('cesarevc-docker-registry')
+            DOCKER_IMAGE = 'cesarevc/cinerank-app:1.1.1-snapshot'
+        }
+        stage('Build') {
+            steps {
+                sh 'sudo docker build -t ${DOCKER_IMAGE} .'
+            }
+        }
+        stage('Login & Push') {
+            steps {
+                sh '''
+                    echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin docker.io
+                    sudo docker push ${DOCKER_IMAGE}
+                '''
+            }
+        }
     }
 }
 
