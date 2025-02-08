@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('cesarevc-docker-registry')
-        DOCKER_IMAGE = 'cesarevc/cinerank-app:1.1.1-snapshot'
+        DOCKER_IMAGE = 'cesarevc/cinerank-app:1.1.2-snapshot'
     }
     tools {
         maven 'maven'
