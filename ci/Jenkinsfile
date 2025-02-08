@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('cesarevc-docker-registry')
+        DOCKER_IMAGE = 'cesarevc/cinerank-app:1.1.1-snapshot'
+    }
     tools {
         maven 'maven'
         jdk 'JDK17'
@@ -16,10 +20,6 @@ pipeline {
                 mvn clean package
                 echo "** end notificaciones compilation"                            '''
             }
-        }
-        environment {
-            DOCKERHUB_CREDENTIALS = credentials('cesarevc-docker-registry')
-            DOCKER_IMAGE = 'cesarevc/cinerank-app:1.1.1-snapshot'
         }
         stage('Build') {
             steps {
