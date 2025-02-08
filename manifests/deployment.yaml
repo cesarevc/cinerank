@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: cinerank-app
-          image: cesarevc/cinerank-app:1.1.0-snapshot
+          image: cesarevc/cinerank-app:1.1.1-snapshot
           ports:
             - containerPort: 8080
           resources:

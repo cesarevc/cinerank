@@ -1,6 +1,9 @@
 # JDK 17 as image base
 FROM openjdk:17-jdk-alpine
 
+RUN apk add --no-cache curl
+
+
 # Maintainer Info
 LABEL maintainer="cesarevc"
 
@@ -11,7 +14,7 @@ WORKDIR /app
 EXPOSE 8080
 
 # Add the application's jar to the container
-COPY target/cinerank-1.1.0-SNAPSHOT.jar /app/cinerank-1.1.0-SNAPSHOT.jar
+COPY target/cinerank-1.1.1-SNAPSHOT.jar /app/cinerank-1.1.1-SNAPSHOT.jar
 
 # Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/cinerank-1.1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/cinerank-1.1.1-SNAPSHOT.jar"]
