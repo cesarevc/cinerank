@@ -10,7 +10,7 @@ spec:
         autoscaling.knative.dev/maxScale: "5"  # Máximo de 5 pods
     spec:
       containers:
-        - image: cesarevc/cinerank-app:1.1.1-snapshott  # Imagen de tu app Spring Boot
+        - image: cesarevc/cinerank-app:1.1.1-snapshot
           ports:
             - containerPort: 8080
           env:
