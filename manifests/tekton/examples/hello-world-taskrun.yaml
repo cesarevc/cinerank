@@ -5,4 +5,4 @@ metadata:
   namespace: diploe2-cevc
 spec:
   taskRef:
-  name: hello-world
+    name: hello-world

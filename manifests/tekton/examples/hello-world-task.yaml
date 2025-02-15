@@ -6,7 +6,7 @@ metadata:
 spec:
   steps:
   - name: echo
-  image: busybox
-  script: |
-    #!/bin/sh
-    echo "Hello, World from Tekton!"
+    image: busybox
+    script: |
+      #!/bin/sh
+      echo "Hello, World from Tekton!"
