@@ -17,4 +17,5 @@ spec:
     value: "true"
   workspaces:
   - name: output
-    emptyDir: {} 
+    persistentVolumeClaim:
+      claimName: workspace 
