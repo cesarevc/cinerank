@@ -1,5 +1,5 @@
 # JDK 17 as image base
-FROM openjdk:17-jdk-alpine
+FROM docker.io/openjdk:17-oracle
 
 RUN apk add --no-cache curl
 
