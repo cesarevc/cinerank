@@ -1,7 +1,8 @@
 # JDK 17 as image base
 FROM docker.io/openjdk:17-oracle
 
-RUN apk add --no-cache curl
+# this line install 'curl' in a image based on Alpine linux
+# RUN apk add --no-cache curl
 
 # Maintainer Info
 LABEL maintainer="cesarevc"
