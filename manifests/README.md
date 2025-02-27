@@ -90,20 +90,20 @@ kubectl delete deployment <deployment-name>
 
 ## **Ejecuciones en Practica 6**
 Durante las practicas 6 se realizo la creacion y ejecucion de varias tareas que realizarian la descarga de nuestro repositorio, listado de documentos en carpeta, building, construccion de la imagen y por ultimo subirla a DockerHub para lo cual de inicio configuramos un `serviceAccount` llamado `tekton-sa` asi como su `role` y `rolebinding` para este `serviceAccount` posteriormente se realizo la descarga de varias tareas, posterior su ejecucion, creacion de un `PVC` y `configmap`
-![Tekton](images\download-git-clone-taskrun.png)
-![Tekton](images\git-clone-taskrun.png)
-![Tekton](images\download-list-directory-taskrun.png)
-![Tekton](images\list-directory-taskrun.png)
-![Tekton](images\create-pvc.png)
-![Tekton](images\show-pvc.png)
+![Tekton](images/download-git-clone-taskrun.png)
+![Tekton](images/git-clone-taskrun.png)
+![Tekton](images/download-list-directory-taskrun.png)
+![Tekton](images/list-directory-taskrun.png)
+![Tekton](images/create-pvc.png)
+![Tekton](images/show-pvc.png)
 ![Tekton](images/config-map.png)
-![Tekton](images\current-context.png)
-![Tekton](images\maven-taskrun-pod.png)
-![Tekton](images\maven-taskrun.png)
-![Tekton](images\buildah-taskrun.png)
-![Tekton](images\buildah-taskrun-pod.png)
-![Tekton](images\buildah-logs.png)
-![Tekton](images\docker-image.png)
+![Tekton](images/current-context.png)
+![Tekton](images/maven-taskrun-pod.png)
+![Tekton](images/maven-taskrun.png)
+![Tekton](images/buildah-taskrun.png)
+![Tekton](images/buildah-taskrun-pod.png)
+![Tekton](images/buildah-logs.png)
+![Tekton](images/docker-image.png)
 
 
 ### Authors ✒️
