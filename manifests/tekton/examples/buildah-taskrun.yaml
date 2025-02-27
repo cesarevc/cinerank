@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  generateName: buildah-run-
+  namespace: diploe2-cevc
+spec:
+  serviceAccountName: tekton-sa
+  taskRef:
+    name: buildah
+  params:
+    - name: IMAGE
+      value: 'docker.io/cesarevc/cinerank-app:V2.1'
+    - name: TLSVERIFY
+      value: 'false'
+    - name: STORAGE_DRIVER
+      value: 'vfs'
+  workspaces:
+    - name: source
+      persistentVolumeClaim:
+        claimName: workspace
+    - name: dockerconfig
+      secret:
+        secretName: dockerconfig-secret 
