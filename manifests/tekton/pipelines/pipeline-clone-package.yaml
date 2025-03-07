@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+ name: pipeline-clone-package
+spec:
+ description: |
+ … use your imagination, write something nice and usual … 
+params:
+ - name: repo-url
+ type: string
+ - name: maven-image
+ type: string 
