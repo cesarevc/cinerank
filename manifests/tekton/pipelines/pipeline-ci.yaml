@@ -1,0 +1,67 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: pipeline-ci
+spec:
+  description: |
+    … use your imagination, write something nice and usual …
+  params:
+    - name: repo-url
+      type: string
+    - name: maven-image
+      type: string
+    - name: docker-image
+      type: string
+  workspaces:
+    - name: workspace
+    - name: maven-settings
+    - name: dockerconfig
+  tasks:
+    - name: fetch-repository
+      taskRef:
+        kind: Task
+        name: git-clone
+      params:
+        - name: url # <- this is the git-clone param
+          value: $(params.repo-url) # <- a reference to param
+        - name: deleteExisting
+          value: "true"
+      workspaces:
+        - name: output # <- should be the same as the git-clone task
+          workspace: workspace # <- the workspace defined up
+    - name: maven
+      taskRef:
+        name: maven
+      runAfter: # <- the task should start once fetch-repository ends
+        - fetch-repository
+      params:
+        - name: GOALS
+          value:
+            - -B
+            - -DskipTests
+            - clean
+            - package
+        - name: MAVEN_IMAGE
+          value: $(params.maven-image) # <- same parameter as up
+      workspaces:
+        - name: maven-settings
+          workspace: maven-settings
+        - name: source # <- name of the workspace expected by the Task
+          workspace: workspace
+    - name: buildah
+      taskRef:
+        name: buildah
+      runAfter:
+        - maven
+      params:
+        - name: IMAGE
+          value: $(params.docker-image)
+        - name: TLSVERIFY
+          value: 'false'
+        - name: STORAGE_DRIVER
+          value: 'vfs'
+      workspaces:
+        - name: source
+          workspace: workspace
+        - name: dockerconfig
+          workspace: dockerconfig
