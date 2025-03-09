@@ -21,3 +21,6 @@ spec:
     - name: workspace
       persistentVolumeClaim:
         claimName: workspace
+    - name: dockerconfig
+      secret:
+        secretName: dockerconfig-secret
