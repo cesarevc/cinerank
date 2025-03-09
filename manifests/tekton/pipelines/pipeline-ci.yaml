@@ -10,6 +10,8 @@ spec:
       type: string
     - name: maven-image
       type: string
+    - name: docker-image
+      type: string
   workspaces:
     - name: workspace
     - name: maven-settings
@@ -45,7 +47,7 @@ spec:
           workspace: maven-settings
         - name: source # <- name of the workspace expected by the Task
           workspace: workspace
-    -name: buildah
+    - name: buildah
       taskRef:
         name: buildah
       runAfter:
