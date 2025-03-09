@@ -16,8 +16,7 @@ spec:
       value: 'vfs'
   workspaces:
     - name: source
-      persistentVolumeClaim:
-        claimName: workspace
+      workspace: workspace
     - name: dockerconfig
       secret:
         secretName: dockerconfig-secret 
