@@ -2,7 +2,7 @@
 
 _This project is a little application, to practice docker and kubernetes and were made with java and mongodb._
 
-Testing my webhook integration 9
+Testing my webhook integration v1
 
 ## Built with 🛠️
 
