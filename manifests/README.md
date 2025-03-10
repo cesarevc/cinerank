@@ -105,6 +105,15 @@ Durante las practicas 6 se realizo la creacion y ejecucion de varias tareas que 
 ![Tekton](images/buildah-logs.png)
 ![Tekton](images/docker-image.png)
 
+## **Pipelines**
+En Tekton, una Pipeline es una definición de un conjunto de tareas que se ejecutan en secuencia o en paralelo para lograr un objetivo, como la construcción, prueba y despliegue de una aplicación. Una PipelineRun es una instancia específica de ejecución de una Pipeline.
+
+En el caso de las primeras practicas usamos las task para la ejecucion de taskrun por separado, entenediendo el flujo composicion de una taskrun para despues concretar el entendimiento del concepto de las pipelines y pipelinesrn en tekton, donde ahora definimos las tareas dentro de la pipeline, para su ejecucion en taskrun, envio de params y asignamos un orden de ejecucion con el runAfter indicando cual seria la secuancialidad, siempre cuidando el tema de los workspaces entre tasks y configuracion de recursos previos como secretos, configmaps, persistVolumeClaims, serviceAccount, Role, RoleBinding entre otros.
+
+Aqui el ejemplo de la practica con una ejecucion de pipeline que constaba de tres etapas o tareas a ejecutar.
+
+![Tekton Pipeline](images/pipelinerun.png)
+
 
 ### Authors ✒️
 

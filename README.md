@@ -2,7 +2,6 @@
 
 _This project is a little application, to practice docker and kubernetes and were made with java and mongodb._
 
-Testing my webhook integration v1.0
 
 ## Built with 🛠️
 
@@ -25,4 +24,7 @@ Database is hosted in Mongodb ...
 * **César Enrique** - *Initial work* - [cesarevc](https://github.com/cesarevc)
 
 ---
+
 ⌨️ Build by [cesarevc](https://github.com/cesarevc)
+>Verificación de mi CI/CD desde mi repositorio `{cesareevc/cinerank}`
+
